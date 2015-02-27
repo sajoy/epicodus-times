@@ -14,10 +14,10 @@
       <li ng-repeat="item in divisions">
         <h4>{{ item.name }}</h4>
         <ul>
-          <li ng-repeat="item in reporters">
+          <li ng-repeat="item in item.reporters">
             <a ui-sref="home.divisions.reporter({ reporterId: item.id })"> {{ item.name }}</a>
           </li>
-          <li ng-click="addNew = true">add new reporter</li>
+          <li ng-click="addNew = !addNew">add new reporter</li>
           <li ng-show="addNew" style="list-style: none;">
             <form ng-submit="DivisionsFactory.addReporter()" class="form-inline" role="form">
               <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
