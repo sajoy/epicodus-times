@@ -1,12 +1,10 @@
 <div id="reporter-col" class="col-md-3">
-  <li ng-show="addNew" style="list-style: none;">
-    <form ng-submit="addReporter()" class="form-inline" role="form">
-      <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
-      <input type="number" ng-model="DivisionsFactory.years" class="form-control" placeholder="Years of Employment">
-      <input type="text" ng-model="DivisionsFactory.birthday" class="form-control" placeholder="Birthday">
-      <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
-    </form>
-  </li>
+  <form ng-submit="addReporter()" class="form-inline" role="form">
+    <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
+    <input type="number" ng-model="DivisionsFactory.years" class="form-control" placeholder="Years of Employment">
+    <input type="text" ng-model="DivisionsFactory.birthday" class="form-control" placeholder="Birthday">
+    <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
+  </form>
 
   <!-- <h1>Reporter</h1>
   Name: {{ reporter.name }}
