@@ -1,20 +1,33 @@
-.col-md-3 {
-  padding: 15px;
-  height: 100vh;
-  margin: 20px;
-  /*border: solid 1px black;*/
+.container {
+  width: 100%;
 }
+
+.header {
+  height: 200px;
+  color: white;
+}
+
+table {
+  table-layout: fixed;
+  width: 800px;
+}
+
+table tr, td, th {
+  padding: 10px;
+}
+
+td, th {
+  width: 150px;
+}
+
+.header a {color: white;}
 
 #about-col {
   background-color: #1C7C54;
 }
 
 #divisions-col {
-  margin-top: 100px;
   padding: 0;
-  border: solid 1px #88D498;
-  border-top-left-radius: 15px 15px;
-  border-top-right-radius: 15px 15px;
 }
 
 #divisions-col .top {
@@ -22,15 +35,16 @@
 
 }
 
-#divisions-col .bottom {
+#divisions-col .main {
   background-color: #88D498;
   width: 100%;
   padding: 15px;
   margin-top: 0;
+  height: 800px;
+  overflow: auto;
 }
 
 #reporter-col {
-  margin-top: 200px;
   background-color: #ADEEE3;
 }
 
@@ -40,7 +54,8 @@
 }
 
 
-ul, li {
-  padding-left: 10px;
+li, ul  {
+  /*padding-left: 10px;*/
+  list-style: square;
 
 }
