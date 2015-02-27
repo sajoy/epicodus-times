@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-2">
     <div>
-      <h3 ng-click="DivisionsFactory.test()">Add a Division</h3>
+      <h3>Add a Division</h3>
       <form ng-submit="DivisionsFactory.addDivision()" class="form-inline" role="form">
         <div class="form-group">
-          <input type="text" ng-model="DivisionsFactory.divisionName" class="form-control" placeholder="New Division Name">
+          <input type="text" ng-model="DivisionsFactory.divisionName" class="form-control" placeholder="New Division Name" required>
         </div>
         <button type="submit" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
       </form>
@@ -17,34 +17,32 @@
       <hr>
       <form class="form-inline" role="form">
         <div class="form-group has-feedback">
-          <input type="text" ng-model="query" ng-model-options="{ getterSetter: true }" class="form-control" placeholder="Search Divisions">
+          <input type="text" ng-model="query" class="form-control" placeholder="Search Divisions">
           <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>
       </form>
     </div>
     <hr>
-    <div ui-view>  </div>
+    <div ui-view></div>
   </div>
   <div id="divisions-col" class="col-md-10">
-    <div ng-show="divisions.length" class="main">
-      <h2>Division List</h2>
-      <ul class="divisionList">
-        <li class="divisionList" ng-repeat="item in filtered = (divisions | filter:query | orderBy:predicate:reverse)">
-          <h3 ng-click="showReporters = !showReporters">{{ item.name }}</h3>
-          <ul class="reportersList list-inline" ng-show="showReporters">
-            <li> {{item.reporters.length}} {{item.name}} Reporters: </li>
-            <li class="reportersList comma" ng-repeat="item in item.reporters">
-              <span ng-click="showDetails = !showDetails">{{item.name}}</span>
-              <span class="details" ng-show="showDetails">
-                (Years with The Epicodus Times: {{item.years}}. Send them a birthday card on: {{item.birthday}}.)
-              </span>
-            </li>
-            <li class="reportersList">
-              <a ui-sref="home.divisions.reporter({ divisionId: item.id })">add new reporter</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <h2>Division List</h2>
+    <ul class="divisionList">
+      <li class="divisionList" ng-repeat="item in filtered = (divisions | filter:query | orderBy:predicate:reverse)">
+        <h3 ng-click="showReporters = !showReporters">{{ item.name }}</h3>
+        <ul class="reportersList list-inline" ng-show="showReporters">
+          <li> {{item.reporters.length}} {{item.name}} Reporters: </li>
+          <li class="reportersList comma" ng-repeat="item in item.reporters">
+            <span ng-click="showDetails = !showDetails">{{item.name}}</span>
+            <span class="details" ng-show="showDetails">
+              (Years with The Epicodus Times: {{item.years}}. Send them a birthday card on: {{item.birthday}}.)
+            </span>
+          </li>
+          <li class="reportersList">
+            <a ui-sref="home.divisions.reporter({ divisionId: item.id })">add new reporter</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>

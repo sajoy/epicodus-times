@@ -29,26 +29,20 @@ h2 {
 .header {
   height: 250px;
   color: white;
+  background-color: #1C7C54;
 }
 
 .header a {color: white;}
 
-#about-col {
-  background-color: #1C7C54;
-}
-
-#divisions-col {
+#divisions-col  {
   padding: 0;
-}
-
-#divisions-col .main {
   background-color: #88D498;
   padding: 15px 30px 15px 30px;
   height: 800px;
   overflow: auto;
 }
 
-.main h3 {
+#divisions-col h3 {
   font-size: 2em;
 }
 

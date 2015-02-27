@@ -1,9 +1,9 @@
-<div class="reporter-col">
+<div>
   <h3>Add a Reporter to {{division.name}}</h3>
   <form ng-submit="addReporter()" class="form-inline" role="form">
-    <input type="text" ng-model="reporterName" class="form-control" placeholder="New Reporter Name">
-    <input type="number" ng-model="years" class="form-control" placeholder="Years of Work">
-    <input type="text" ng-model="birthday" class="form-control" size="16" placeholder="Birthday">
+    <input type="text" ng-model="reporterName" class="form-control" placeholder="New Reporter Name" required>
+    <input type="number" ng-model="years" class="form-control" placeholder="Years of Work" required>
+    <input type="text" ng-model="birthday" class="form-control" size="16" placeholder="Birthday" required>
     <button type="submit" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
   </form>
 </div>
