@@ -1,4 +1,12 @@
 <div class="col-md-3">
+  <li ng-show="addNew" style="list-style: none;">
+    <form ng-submit="DivisionsFactory.addReporter()" class="form-inline" role="form">
+      <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
+      <input type="number" ng-model="DivisionsFactory.years" class="form-control" placeholder="Years of Employment">
+      <input type="text" ng-model="DivisionsFactory.birthday" class="form-control" placeholder="Birthday">
+    </form>
+  </li>
+
   <h1>Reporter</h1>
   Name: {{ reporter.name }}
   Years of employment: {{ reporter.years }}
