@@ -1,6 +1,14 @@
 <div class="row">
   <div class="col-md-2">
     <div>
+      <form class="form-inline" role="form">
+        <div class="form-group has-feedback">
+          <input type="text" ng-model="query" ng-model-options="{ getterSetter: true }" class="form-control" placeholder="Search Divisions">
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+    <div>
       <h3 ng-click="DivisionsFactory.test()">Add a Division</h3>
       <form ng-submit="DivisionsFactory.addDivision()" class="form-inline" role="form">
         <div class="form-group">
@@ -9,27 +17,23 @@
         <button type="submit" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
       </form>
     </div>
-    <div>
-
-
-    </div>
     <div ui-view>  </div>
   </div>
   <div id="divisions-col" class="col-md-10">
     <div ng-show="divisions.length" class="main">
-      <h1>Division List</h1>
+      <h2>Division List</h2>
       <ul class="divisionList">
-        <li class="divisionList" ng-repeat="item in divisions">
-          <h4 ng-click="showReporters = !showReporters">{{ item.name }}</h4>
-          <ul ng-show="showReporters">
-            <li ng-repeat="item in item.reporters">
+        <li class="divisionList" ng-repeat="item in filtered = (divisions | filter:query )">
+          <h3 ng-click="showReporters = !showReporters">{{ item.name }}</h3>
+          <ul class="reportersList" ng-show="showReporters">
+            <li class="reportersList" ng-repeat="item in item.reporters">
               <h4 ng-click="showDetails = !showDetails">{{item.name}}</h4>
               <p ng-show="showDetails">
                 Years with The Epicodus Times: {{item.years}}. </br>
                 Send them a birthday card on: {{item.birthday}}.
               </p>
             </li>
-            <li>
+            <li class="reportersList">
               <a ui-sref="home.divisions.reporter({ divisionId: item.id })">add new reporter</a>
             </li>
           </ul>

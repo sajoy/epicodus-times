@@ -1,9 +1,29 @@
 .container {
   width: 100%;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 5em;
+  color: white;
+  text-align: right;
+}
+
+.col-md-2 {
+  margin: 10px 0 10px 0;
 }
 
 .header {
-  height: 200px;
+  height: 250px;
   color: white;
 }
 
@@ -20,6 +40,7 @@ td, th {
   width: 150px;
 }
 
+.container a {color: black;}
 .header a {color: white;}
 
 #about-col {
@@ -53,8 +74,15 @@ td, th {
   width: 20px;
 }
 
+.divisionList {
+  margin-top: -20px;
+}
 
-li, ul  {
+.divisionsList ul {
+  list-style: none;
+}
+
+li.reportersList  {
   /*padding-left: 10px;*/
   list-style: square;
 
