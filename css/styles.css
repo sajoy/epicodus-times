@@ -1,9 +1,46 @@
 .col-md-3 {
-  border: 1px solid black;
   padding: 15px;
+  height: 100vh;
+  margin: 20px;
+  /*border: solid 1px black;*/
+}
+
+#about-col {
+  background-color: #1C7C54;
+}
+
+#divisions-col {
+  margin-top: 100px;
+  padding: 0;
+  border: solid 1px #88D498;
+  border-top-left-radius: 15px 15px;
+  border-top-right-radius: 15px 15px;
+}
+
+#divisions-col .top {
+  padding: 15px;
+
+}
+
+#divisions-col .bottom {
+  background-color: #88D498;
+  width: 100%;
+  padding: 15px;
+  margin-top: 0;
+}
+
+#reporter-col {
+  margin-top: 200px;
+  background-color: #ADEEE3;
 }
 
 
 .toggleSwitch {
   width: 20px;
+}
+
+
+ul, li {
+  padding-left: 10px;
+
 }

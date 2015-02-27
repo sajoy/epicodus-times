@@ -1,15 +1,33 @@
-<div class="col-md-3">
-  <h1>Division List</h1>
-  <ul>
-    <li ng-repeat="item in divisions">
-      <h4>{{ item.name }}</h4>
-      <!-- <ul>
-        <li ng-repeat="item in reporters">
-          <a ui-sref="home.divisions.reporter({ reporterId: item.id })"> {{ item.name }}</a>
-        </li>
-      </ul> -->
-    </li>
-  </ul>
-
+<div id="divisions-col" class="col-md-3">
+  <div class="top">
+    <h3 ng-click="DivisionsFactory.test()">Add a Division</h3>
+    <form ng-submit="DivisionsFactory.addDivision()" class="form-inline" role="form">
+      <div class="form-group">
+        <input type="text" ng-model="DivisionsFactory.divisionName" class="form-control" placeholder="New Division Name">
+      </div>
+      <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
+    </form>
+  </div>
+  <div ng-show="divisions.length" class="bottom">
+    <h1>Division List</h1>
+    <ul>
+      <li ng-repeat="item in divisions">
+        <h4>{{ item.name }}</h4>
+        <ul>
+          <li ng-repeat="item in reporters">
+            <a ui-sref="home.divisions.reporter({ reporterId: item.id })"> {{ item.name }}</a>
+          </li>
+          <li ng-click="addNew = true">add new reporter</li>
+          <li ng-show="addNew" style="list-style: none;">
+            <form ng-submit="DivisionsFactory.addReporter()" class="form-inline" role="form">
+              <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
+              <input type="number" ng-model="DivisionsFactory.years" class="form-control" placeholder="Years of Employment">
+              <input type="text" ng-model="DivisionsFactory.birthday" class="form-control" placeholder="Birthday">
+            </form>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
 <div ui-view></div>
