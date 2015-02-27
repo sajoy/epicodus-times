@@ -1,5 +1,15 @@
 <div class="col-md-3">
   <h1>Division List</h1>
+  <ul>
+    <li ng-repeat="item in divisions">
+      <h4>{{ item.name }}</h4>
+      <!-- <ul>
+        <li ng-repeat="item in reporters">
+          <a ui-sref="home.divisions.reporter({ reporterId: item.id })"> {{ item.name }}</a>
+        </li>
+      </ul> -->
+    </li>
+  </ul>
 
 </div>
 <div ui-view></div>

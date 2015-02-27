@@ -1,0 +1,9 @@
+.col-md-3 {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+
+.toggleSwitch {
+  width: 20px;
+}

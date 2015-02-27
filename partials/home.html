@@ -1,15 +1,17 @@
 <div class="row">
-  
-  <div class="col-md-3">
+
+  <div class="col-md-3 about">
     <h1>The Epicodus Times' Division Tracker</h1>
 
-    <h3>Add a Division</h3>
+    <h3 ng-click="DivisionsFactory.test()">Add a Division</h3>
     <form ng-submit="DivisionsFactory.addDivision()" class="form-inline" role="form">
       <div class="form-group">
         <input type="text" ng-model="DivisionsFactory.divisionName" class="form-control" placeholder="New Division Name">
       </div>
       <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span></button>
     </form>
+
+    <a ui-sref="home.divisions">View Divisions Panel</a>
   </div>
 
   <div ui-view></div>

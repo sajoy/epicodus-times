@@ -4,7 +4,13 @@ epicodusTimes.config(function($stateProvider) {
 
   $stateProvider.state('home', {
     url: "",
-    templateUrl: "partials/home.html"
+    templateUrl: "partials/home.html",
+    controller: "DivisionsController"
+  });
+
+  $stateProvider.state('home.divisions', {
+    url: "/divisions",
+    templateUrl: "partials/home.divisions.html"
   });
 
 });
