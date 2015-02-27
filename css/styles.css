@@ -23,6 +23,7 @@ h2 {
 
 .col-md-2 {
   margin: 10px 0 10px 0;
+  text-align: center;
 }
 
 .header {
@@ -49,10 +50,6 @@ h2 {
 
 .main h3 {
   font-size: 2em;
-}
-
-#reporter-col {
-  background-color: #ADEEE3;
 }
 
 li {

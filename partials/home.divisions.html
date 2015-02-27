@@ -1,14 +1,6 @@
 <div class="row">
   <div class="col-md-2">
     <div>
-      <form class="form-inline" role="form">
-        <div class="form-group has-feedback">
-          <input type="text" ng-model="query" ng-model-options="{ getterSetter: true }" class="form-control" placeholder="Search Divisions">
-          <span class="glyphicon glyphicon-search form-control-feedback"></span>
-        </div>
-      </form>
-    </div>
-    <div>
       <h3 ng-click="DivisionsFactory.test()">Add a Division</h3>
       <form ng-submit="DivisionsFactory.addDivision()" class="form-inline" role="form">
         <div class="form-group">
@@ -16,19 +8,31 @@
         </div>
         <button type="submit" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
       </form>
-      <h3>Sort Division List By:</h3>
-      
     </div>
+    <hr>
+    <div>
+      <p>Sort Division List:</>
+      <a class="btn btn-xs btn-primary" ng-click="predicate = 'name'; reverse = !reverse"  title="Division Name"><span class="glyphicon glyphicon-font"></span></a>
+      <a class="btn btn-xs btn-primary" ng-click="predicate = 'reporters.length'; reverse = !reverse" title="Number of Reporters"><span class="glyphicon glyphicon-user"></span></a>
+      <hr>
+      <form class="form-inline" role="form">
+        <div class="form-group has-feedback">
+          <input type="text" ng-model="query" ng-model-options="{ getterSetter: true }" class="form-control" placeholder="Search Divisions">
+          <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+    <hr>
     <div ui-view>  </div>
   </div>
   <div id="divisions-col" class="col-md-10">
     <div ng-show="divisions.length" class="main">
       <h2>Division List</h2>
       <ul class="divisionList">
-        <li class="divisionList" ng-repeat="item in filtered = (divisions | filter:query )">
+        <li class="divisionList" ng-repeat="item in filtered = (divisions | filter:query | orderBy:predicate:reverse)">
           <h3 ng-click="showReporters = !showReporters">{{ item.name }}</h3>
           <ul class="reportersList list-inline" ng-show="showReporters">
-            <li> {{item.name}} Reporters: </li>
+            <li> {{item.reporters.length}} {{item.name}} Reporters: </li>
             <li class="reportersList comma" ng-repeat="item in item.reporters">
               <span ng-click="showDetails = !showDetails">{{item.name}}</span>
               <span class="details" ng-show="showDetails">
