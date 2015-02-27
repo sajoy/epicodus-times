@@ -13,4 +13,10 @@ epicodusTimes.config(function($stateProvider) {
     controller: "DivisionsController"
   });
 
+  $stateProvider.state('home.divisions.reporter', {
+    url: "/:divisionsId",
+    templateUrl: "partials/home.divisions.reporter.html",
+    controller: "ReportersController"
+  });
+
 });
