@@ -1,13 +1,9 @@
 <div id="reporter-col" class="col-md-3">
+  <h1>Add Reporter to {{ division.name }}</h1>
   <form ng-submit="addReporter()" class="form-inline" role="form">
-    <input type="text" ng-model="DivisionsFactory.reporterName" class="form-control" placeholder="New Reporter Name">
-    <input type="number" ng-model="DivisionsFactory.years" class="form-control" placeholder="Years of Employment">
-    <input type="text" ng-model="DivisionsFactory.birthday" class="form-control" placeholder="Birthday">
+    <input type="text" ng-model="reporterName" class="form-control" placeholder="New Reporter Name">
+    <input type="number" ng-model="years" class="form-control" placeholder="Years of Employment">
+    <input type="text" ng-model="birthday" class="form-control" placeholder="Birthday">
     <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span></button>
   </form>
-
-  <!-- <h1>Reporter</h1>
-  Name: {{ reporter.name }}
-  Years of employment: {{ reporter.years }}
-  Send them a card on: {{ reporter.birthday }} -->
 </div>

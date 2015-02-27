@@ -15,7 +15,7 @@
         <h4>{{ item.name }}</h4>
         <ul>
           <li ng-click="detailsShow = !detailsShow" ng-repeat="item in item.reporters">
-            {{ item.name }}
+            Name: {{ item.name }}
             <ul ng-show="detailsShow">
               <li>{{item.years}}</li>
               <li>{{item.birthday}}</li>
